@@ -1,0 +1,420 @@
+Course Name,Course Code,Prerequisite
+Foundations of Biology,FOB,None
+Cell Biology and Biochemistry,CBB,None
+Introduction to Quantitative,IQB,MTH100
+Genetics and Molecular Biology,GMB,None
+Practical Bioinformatics,PB,None
+Algorithms in,ABIN,Oneprogrammingcourse
+Biophysics,BioP,None
+Stochastic Simulations in,SSSBB,BIO531
+Cell Biology and Biochemistry,CBB,None
+Foundations of Modern,FOMB,None
+Algorithms in,ACB,None
+Chemoinformatics,BIO523,None
+Biomedical Image,BIO524,None
+Introduction to,BIO531,MTH100
+Network Biology,BIO532,None
+Systems and Synthetic,BIO533,"BIO531 , BIO501"
+Introduction to,BIO534,None
+Data Sciences for,BIO541,None
+Machine Learning for,BIO542,None
+Big Data Mining in,BIO543,None
+Computational Gastronomy,BIO544,None
+Biostatistics,BIO545,None
+Computing for Medicine,BIO546/CSE585,None
+Computer Aided Drug,BIO561,None
+Communication Skills,COM101,None
+Technical Communication,COM301A,None
+Introduction to,CSE101,None
+Data Structures &,CSE102,CSE101
+Computer Organization,CSE112,ECE111
+Discrete Mathematics,CSE121,None
+Introduction to Intelligent,CSE140,IntroductiontoProgramming[CSE101] ([CSE101])
+Advanced Programming,CSE201,"CSE101 , CSE102"
+Fundamentals of Database,CSE202,CSE102
+Algorithm Design and,CSE222,CSE102
+Algorithm Design and,CSE223,CSE102
+Operating Systems,CSE231,CSE102
+Computer Networks,CSE232,"CSE101 , CSE231 , CSE222"
+Network Administration,CSE233,None
+Modern Algorithm Design,CSE319/CSE519,CSE222
+Advanced Algorithms,CSE320/CSE520,CSE102
+Theory of Computation,CSE322,CSE121  or MTH210
+Computer Graphics,CSE333/CSE533,CSE101
+Digital Image Processing,CSE340/CSE540/ECE340,"MTH100 , MTH201"
+Statistical Machine,CSE342/CSE542/ECE356/ECE556,"CSE101 , MTH201"
+Computer Vision,CSE344/CSE544/ECE344/ECE544,MTH100
+Foundations of Computer,CSE345/CSE545,None
+Network Security,CSE350/CSE550,None
+Networks and System,CSE354/CSE554,"CSE231 , CSE232"
+Complexity Theory,CSE421/CSE621,"CSE102 , MTH201 , CSE322"
+Advanced Biometrics,CSE441/CSE541,CSE343/CSE543/ECE563
+Designing Human Centered,CSE501,None
+Foundations of Parallel,CSE502,"CSE101 , CSE102 , CSE201"
+Program Analysis,CSE503,"CSE102 , CSE201"
+Decision Procedures,CSE504,C/C++  or Javaprogramming(equivalentsofDSAandAP) (/viewDescription/ﬁlename?
+Data Mining,CSE506,"CSE202 , CSE101 , MTH100"
+Database System,CSE507,"CSE202 , CSE102"
+Information Retrieval,CSE508,"CSE102 , CSE201 , CSE202"
+Computer Architecture,CSE511/ECE511,None
+Bayesian Machine Learning,CSE515/ECE551,MTH201
+Theories of Deep Learning,CSE516/ECE559,"MTH100 , MTH203 ,"
+Randomized Algorithms,CSE523,"CSE222 , CSE121 , MTH201"
+Theory of Modern,CSE524,None
+Introduction to Graduate,CSE525,CSE222
+Introduction to Blockchain,CSE528,CSE546
+Approximation Algorithms,CSE529,CSE222
+Distributed Systems:,CSE530,CSE231;Studentsmusthavegoodprogrammingskillswithatleastoneofthefollowinglanguages:Java
+Multi-Agent Systems,CSE531,None
+Mobile Computing,CSE535,CSE101
+Wireless Networks,CSE538/ECE538,CSE232
+Applied Cryptography,CSE546,CSE121
+Security Engineering,CSE552,CSE231
+Introduction to Spatial,CSE555,"CSE102 , CSE202"
+Natural Language,CSE556,"CSE101 , MTH201 , CSE222"
+Big Data Analytics,CSE557,CSE202
+Data Science,CSE558,CSE101
+Mining Large Networks,CSE559,"CSE222 , CSE101 , MTH201"
+GPU Computing,CSE560,CSE101
+Probabilistic Graphical,CSE561,MTH201
+Advanced Computer Vision,CSE562,CSE344/CSE544/ECE344/ECE544
+Multimedia Computing and,CSE563,None
+Software Deﬁned,CSE565,CSE232
+Mobile and Middleware,CSE566/DES5MMS,CSE535
+Virtual Reality,CSE570,None
+Introduction to Media,CSE571,None
+Speech and Audio,CSE572/ECE561,"MTH100 , ECE250"
+Smart Sensing for Internet,CSE576,None
+Advanced Internet of,CSE577,None
+Ontology Modeling,CSE580A,CSE102
+"Systems Analysis, Design",CSE581,None
+Software Production,CSE582,None
+Software Development,CSE583,None
+Program Veriﬁcation,CSE584,CSE121  or MTH210
+Geometry Processing,CSE5GP,CSE101
+Object Oriented,CSE600A/ECE600A,None
+Compilers,CSE601,"CSE101 , CSE201 , CSE102"
+Knowledge Graphs in,CSE605A,CSE508  or CSE551
+Data Warehouse,CSE606,CSE202
+Data Lifecycle,CSE606A,CSE343/CSE543/ECE563
+Statistical Computation,CSE609,MTH201
+Introduction to Quantum,CSE622,MTH100
+Advanced Operating,CSE631,CSE231
+Semantic Web,CSE632,"CSE101 , CSE202"
+Robotics,CSE633/ECE670,None
+Social Robotics,CSE633A,None
+Communication Networks,CSE636/ECE636,MTH201
+Collaborative Filtering,CSE640,MTH100
+Advanced Machine,CSE642,"MTH201 , CSE343/CSE543"
+Artiﬁcial Intelligence,CSE643,CSE102
+Privacy and Security in,CSE645,None
+Topics in Adaptive,CSE651,CSE345/CSE545
+Network Science,CSE655,None
+Information Integration and,CSE656,CSE202(DBMS) ((DBMS))
+Trustworthy AI systems,CSE660,CSE643  or CSE343/CSE543/ECE563  or
+Aﬀective Computing,CSE661/DES507,"CSE101 , CSE102 , CSE201"
+Special Topics in Computer,CSE662A,ECE350
+Edge AI,CSE663,"CSE343/CSE543/ECE563 , CSE342/CSE542"
+Meta-Learning,CSE663A,"CSE643 , CSE343/CSE543/ECE563  or"
+Multimedia Security,CSE694F/ECE651,ECE350
+Topics in Software,CSE701,None
+Advanced Topics in Mobile,CSE734,CSE232
+Network Anonymity and,CSE749,None
+Topics in Cryptanalysis,CSE653,None
+Design Drawing &,DES101,None
+Introduction to HCI,DES102,None
+Prototyping Interactive,DES130,None
+Design Processes and,DES201,CompletionofDESIGNDRAWING&VISUALISATION(DDV)CourseParallelCourseVISUALDESIGN&COMMUNICATION
+Visual Design &,DES202,DES101
+Human Computer,DES204,None
+Design of Interactive,DES205/DES519,None
+Introduction to Animation,DES302,None
+Film Making and Radio,DES303,None
+Fundamentals of Audio for,DES501,BasicknowledgeofClass12Maths&Physics (&Physics)
+Introduction to 2D,DES502,None
+Introduction to 3D,DES503,DES302  or DES516
+Narratives in Visual,DES504,None
+Advanced topics in Human,DES506,DES204
+Meta-Learning,CSE618,Atleastoneofthefollowingcourses:ECE363/ECE563/CSE343/CSE342/CSE542/ECE356/ECE556/CSE642/ECE553/CSE641
+Design Futures,DES509,DES519
+Game Design and,DES512,None
+"Wearable Applications,",DES513,None
+Digital Audio & Video,DES514,None
+Information Systems in,DES515,None
+Introduction to 3D,DES516,None
+Introduction to 3D,DES516s,None
+Introduction to Motion,DES518,None
+Human Centred AI,DES520,"DES204 , CSE643  or"
+Fundamentals of Video for,DES521,None
+"Inclusive Design, Universal",DES522,DES201
+Digital Circuits,ECE111,None
+Basic Electronics,ECE113,None
+Integrated Electronics,ECE214,"ECE111 , ECE113 , DES130"
+Circuit Theory and Devices,ECE215,None
+Fields and Waves,ECE230,MTH203
+Principles of,ECE240,"ECE250 , MTH201"
+Signals and Systems,ECE250,MTH100
+Embedded Logic Design,ECE270,None
+Digital VLSI Design,ECE314/ECE514,None
+Analog CMOS Circuit,ECE315/ECE515,None
+Solid State Devices,ECE318/ECE518,None
+RF Circuit Design,ECE321/ECE521,ECE230
+Digital Communication,ECE340/ECE540,ECE240
+Mobile Communications,ECE343,ECE240
+Digital Signal Processing,ECE351,ECE250
+Machine Learning,ECE363/ECE563/CSE343,"MTH100 , MTH201 , CSE101"
+Mixed Signal Design,ECE412/ECE612,ECE315/ECE515
+Antennas Theory and,ECE431/ECE631,ECE230
+Radar Systems,ECE432/ECE632,ECE250
+Statistical Signal,ECE452/ECE552,"MTH100 , MTH201 , ECE250"
+Probability and Random,ECE501,ECE240
+Digital Hardware Design,ECE510,ECE270
+VLSI Design Flow,ECE513,ECE101
+System on Chip Design,ECE516,"ECE314/ECE514 , CSE234"
+Introduction to,ECE517,None
+Intelligent Applications,ECE519,CSE112
+Low Voltage Analog Circuit,ECE520,ECE315/ECE515
+Integrated Circuit,ECE522,None
+Quantum Materials and,ECE524,BasicKnowledgeonsemiconduct  or devicephysics
+Optical Fiber Networks for,ECE532,None
+Satellite Navigation and,ECE533,ECE351
+Optical Communications,ECE534,ECE240
+Optical Networking,ECE536s,None
+Wireless Communication,ECE537,ECE240
+Wireless System,ECE539,ECE240
+Principals of Digital,ECE543,ECE240
+Photonics: Fundamentals &,ECE545,ECE230
+Optical and Wireless,ECE546,None
+Deep Learning,ECE553 / CSE641,None
+Compressive Sensing,ECE554,MTH100
+Speech Recognition and,ECE557,ECE250
+Transform Learning and,ECE558,MTH100
+Modeling and Analysis of,ECE55G,MTH201
+Data Processing and,ECE560,None
+Reinforcement Learning,ECE564/CSE564,MTH201
+Linear Systems Theory,ECE570,None
+Optimal Control Systems,ECE571,None
+Advanced Embedded,ECE573,CSE234
+Machine Learning,ECE577,None
+Nonlinear and Adaptive,ECE579,None
+Autonomous Driving,ECE581,None
+Memory Design and,ECE611,"ECE111 , ECE113"
+Stochastic Estimation and,ECE672,ECE501
+Macroeconomics,ECO201,None
+Econometrics I,ECO221,MTH201
+Money and Banking,ECO223,None
+Introduction to Economic,ECO301,None
+Microeconomics,ECO301,None
+Game Theory,ECO311/ECO511,None
+Industrial Organization,ECO312/ECO512,ECO101  or ECO311
+Market Design,ECO313,ECO311
+Behavioural Economics,ECO314,MTH201
+Econometrics II,ECO322/ECO522,ECO221
+Spatial Statistics and,ECO324/ECO524,ECO221
+Foundations of Finance,ECO331,None
+Valuation and Portfolio,ECO332,None
+Derivatives and Risk,ECO333,ECO331  or ECO332
+Markov Decision,ECO341/ECO541,"MTH100 , MTH201 , MTH203"
+Decision Theory,ECO503,None
+Research Methods,ENG599s,None
+Entrepreneurial,ENT411,None
+Entrepreneurial Khichadi,ENT412,None
+Entrepreneurial Finance,ENT413,None
+Relevance of Intellectual,ENT414,None
+New Venture Planning,ENT415,None
+"Creativity, Innovation, and",ENT416/ENT516,None
+Healthcare Innovation and,ENT421/BIO571,None
+Environmental Sciences,ESC205,None
+"Ecology, Evolution, and",ESC207A,None
+Eﬀective Supply Chain for,MGT310,None
+Emerging Issues in IT,MGT311,None
+Linear Algebra,MTH100,None
+Probability and Statistics,MTH201,None
+Multivariate Calculus,MTH203,None
+Diﬀerential Equations,MTH204,MTH203
+Discrete Structures,MTH210,None
+Number Theory,MTH211,None
+Abstract Algebra I,MTH212,None
+Real Analysis I,MTH240,None
+Numerical Methods,MTH270,"MTH100 , MTH204"
+Introduction to,MTH300,None
+Algebra,MTH302,None
+Graph Theory,MTH310 / MTH520,None
+Combinatorics and its,MTH311,MTH100
+Real Analysis-II,MTH340,MTH240
+Complex Analysis,MTH341 / MTH541,MTH240
+Introduction to Dynamical,MTH343/MTH543,"MTH100 , MTH203 , MTH240"
+Stochastic Processes and,MTH371,MTH201
+Statistical Inference,MTH372,MTH201
+Scientiﬁc Computing,MTH373,MTH100
+Linear Optimization,MTH374/MTH574,MTH100
+Fluid Mechainics,MTH375/MTH575,MTH204
+Advanced Linear Algebra,MTH510,MTH100
+Algebraic Number Theory,MTH512,None
+Abstract Algebra II,MTH513,"MTH100 , MTH212"
+Coding Theory,MTH514,"MTH211 , MTH212"
+Analytic Number Theory,MTH516,MTH341
+Combinatorial Optimization,MTH517,MTH374/MTH574
+Social Network Analysis,CSE568,"CSE222 , CSE101 , MTH201"
+Topics in Number Theory,MTH518,MTH211
+Concurrent and Learned,CSE518,"CSE101 , CSE102 , CSE201"
+Measure and Probability,MTH535,MTH240  or MTH203
+Applied Optimization,ECE666 / CSE517,None
+Introduction to Functional,MTH542,MTH100
+Prototyping Interactive,DES206,None
+Calculus in R^N,MTH544,"MTH100 , MTH203  or MTH240"
+Finite and Spectral Element,MTH545,"MTH100 , MTH203  or MTH240"
+Ethics in AI,SSH325/SSH525,None
+Programmable Networking,CSE567,"CSE102 , CSE231 , CSE232"
+Introduction to PDE,MTH550,MTH204
+Estimation Theory for,ECE5et,ECE501
+Computational Methods in,BIO5XX,None
+Parallel Runtimes for,CSE513,"CSE231 , CSE201"
+Quantum Mechanics,ECE525,MTH100
+Point Set Toplogy,MTH562,Continuousfunctions
+3D Animation ﬁlmmaking,DES305,None
+Point Set Toplogy,MTH562A,None
+"Knowledge Production,",SSH700,None
+Introduction to Riemannian,MTH564A,"MTH100 , MTH203"
+Enhancement Technologies,SOC513,SOC101
+Contract Theory,ECO502,None
+Numerical Solutions,MTH570,"MTH100 , MTH203 , MTH240"
+Tomographic Imaging,ECE565,MTH100
+Integral Transforms and,MTH571,MTH204
+Cloud Computing,CSE569,CSE232
+Categorical Data Analysis,MTH576,MTH201
+Quantum Mechanics,ECE525,MTH100
+Convex Optimization,MTH577,MTH100
+Introduction to AI in,ECE667A,"MTH201 , MTH100 , Vect"
+Computational,BIO549,None
+Numerical Partial,MTH598,"MTH100 , MTH203 , MTH240"
+Variational Calculus and,MTH599,MTH203
+Ergonomics/Human factors,DES524,None
+Introduction to Psychology,PSY201,SSH101
+Positive Psychology,PSY202,None
+Enhancement Technologies,SOC513,SOC101
+Non-Classical Logics,MTH504A,None
+Cognitive Psychology,PSY301,PSY201
+Lattices in Computer,CSE526,MTH100/MTH201/ECE501/CSE222
+Social Psychology,PSY302,None
+Human Microbiome Data,BIO548,None
+Attention and Perception,PSY305/PSY505,None
+Usable Security and,CSE347/CSE547/DES525/DES306,None
+Learning and Memory,PSY306/506,None
+Interactive Systems,CSE573,None
+Neuroscience of Decision,PSY307/507,None
+Information Theory,ECE634,ECE501/MTH201
+Cognition of Motor,PSY308/PSY508,None
+Cognition and Information,DES523,None
+Introduction to Sociology,SOC101,SSH101
+Foundations of Marketing,ENTxxx,None
+Contemporary India:,SOC202,None
+Social Entrepreneurship,ENT202/ ENT404,None
+Sociology of New Media,SOC204,None
+Anthropology and Social,SOC205,None
+Japanese Language,SSH326,None
+Distributed and Federated,CSE665A,"ECE363/ECE563/CSE343/CSE342/CSE542/ECE356/ECE556 , MTH100"
+Business Anthropology,SOC206,None
+Information Technology,SOC207,None
+Comprehensive Gender,SSH225A,None
+Algorithms under,CSE586,CSE222  or equivalent
+Organizations An,SOC208,None
+Advances in Deep Learning,ECE677/CSE677,DeepLearningORAML
+Consumer Culture and,SOC209,None
+Quantum Communication,ECE530,ProbabilityandStochasticProcess
+Sociological Theory,SOC210,None
+Digital Processor Design,ECE523A,ECE111
+"Science, Technology and",SOC211,None
+Advanced Digital,ECE347/ECE547,ECE240
+Key Concepts in Economic,SOC212,None
+Motion Design and,DES526/DES307,None
+Introduction to Digital,SOC213,None
+User Experience Design of,DES527,DES102;CSE101 (;CSE101)
+Causal Inference,ECO323/ECO523,EconometricsI  or StatisticalInference (/viewDescription/ﬁlename?
+Urban Sociology,SOC302,None
+Digital Social Research,SOC307,None
+Reading Hegel's,SSH526/SSH726,None
+Foundations of,ENT201/ENT405,None
+Gender and Media,SOC308/SOC514,None
+Advance Ethnographic,SOC311/SOC501,SSH201
+Concepts and Methods in,SSH327A/SSH527A,Introductionlevelcourseinanyofthemaj  or
+The Business of Artiﬁcial,DES530,None
+Sociology of India: Themes,SOC313/SOC503,None
+Design for Artiﬁcial,DES529,None
+Technology and the Future,SOC314/SOC512,None
+Nonlinear Dynamics and,MTH359/559,MTH100
+Intersectionality Studies,SOC315/SOC511,None
+Mechanics of Bodies,MTH376,MTH100
+Advanced Sociological,SOC502,None
+Topics in Mathematical,MTH506,MTH300  or equivalent/MTH212  or
+Introduction to Algebraic,MTH561,None
+Netwoks and Systems,CSE553,C/C++
+Machine Learning in,ECE564A,ECE240
+Object Oriented,CSE600/ECE600/ECE600A,None
+Programming for,BIO551A,None
+Critical Thinking and,SSH101,None
+Object Oriented,ECE600A,None
+Introduction to Philosophy,SSH121,None
+Applied Fields and Waves,ECE331/ECE531,ECE230
+Critical Thinking,SSH124,None
+Topics on Multivariate,MTH578A,"MTH201 , MTH100 (/viewDescription/ﬁlename?= MTH100)"
+Research Methods in,SSH201,SSH101
+Neural Engineering and,ECE366/ECE566,ECE215
+Theatre Appreciation,SSH211,None
+Diﬀerential Geometry,MTH563,"MTH100 , MTH240  or MTH203"
+Introduction To The Study,SSH214,None
+On the making of,SOC504/SOC701,OneSOCcourse(F ((F) or UGandM.Techstudents) (/viewDescription/ﬁlename?
+Nation and her Narratives,SSH215,None
+Reproducing Kernel Hilbert,MTH550,"MTH100 , MTH240( ( or equivalent)"
+Introduction to Indian,SSH216,None
+An Introduction to,MTH551,"MTH100(LinearAlgebra) ((LinearAlgebra)), MTH240(RealAnalysis-I)"
+Indian Poetry Through the,SSH217,None
+Graduate Computer,CSE637,None
+Social and Political,SSH221,None
+Large Language Models,CSE665,"NLP(CSE556) ((CSE556)), DeepLearning(ECE553) (/viewDescription/ﬁlename?"
+Theory and Practice of,SSH222,None
+Design Thinking and,ENT302,None
+Perspectives of Knowledge,SSH223,None
+3D Creation for Extended,DES532A,None
+"Computer, Information",SSH224,None
+Physics of Semiconductor,ECE210,None
+Interaction Design,DES533,None
+Tangible User Interfaces,DES531,"PIS(DES206) ((DES206)), DPP(DES201) ((DES201))"
+Democracy in India:,SSH261,None
+Electronic System Design,ECE211,"BE(ECE113) ((ECE113)), BasicProgramming (/viewDescription/ﬁlename?"
+Theories of Ethics,SSH300,None
+Urban Space and Gender,SOC719A,SOC308(GenderandMedia) ((GenderandMedia))
+Advanced Writing,SSH311,None
+Systems for AI,CSE634A,CSE-231 (-231)
+Applied Ethics,SSH321,None
+Parameterized Algorithms,CSE619,CSE222(ADA) ((ADA)) or CSE525(GraduateAlg (/viewDescription/ﬁlename?
+New Media and Politics,SSH323,None
+Advanced Digital Design,ECE527,VLSIDesignFlow(ECE313/ECE513) ((ECE313)
+Philosophy of Mind,SSH324,SSH121
+VLSI Design Flow,ECE513/ECE313,"DigitalCircuits , BasicsofCMOSInverter (/viewDescription/ﬁlename?"
+Experiential Learning,ENT303A,None
+Political Anthropology:,SOC216,None
+State and Subject:,SOC702,1SOCclass
+"Governing AI: History,",SSH341/SSH541,None
+Comparative Politics in,SSH361,None
+Intelligent Product Design,ECE323/EVE323/ECE526,None
+Urban Space and Political,SSH362/SSH562,None
+Philosophy of Technology,SSH3PT,None
+Data and Society,SSH711,None
+Extended Reality in,DES534,None
+Politics in Digital Era,SSH240,None
+Algorithmic techniques for,CSE634,CSE102DataStructures&Alg (&Alg) or ithms
+Logic and Artiﬁcial,MTH501,"DiscreteMathematics(CSE121) ((CSE121)), DiscreteStructures(MTH210)"
+Probabilistic Methods in,MTH523/CSE623,"DiscreteStructures/DiscreteMathematics , ADA/GraduateAlg"
+Introduction to,CSE624A,"CSE121 , CSE322 , CSE102"
+Advanced Solid-state,ECE613,ECE210andequivalentf  or PG
+Ubiquitous Computing,DES535,None
+Advanced Topics in Partial,MTH548,None
+Several Complex Variables,MTH547,"Realanalysis , Complexanalysis ,"
+Digital Technologies and,ENT304,None
+"Social Innovation,",ENT305,None
+Decision Making for Multi-,CSE667,CSE102DataStructures&Alg (&Alg) or ithms
+Explainable AI,CSE615,"CSE101IntrotoProgramming , CSE102DataStructures&Alg"
+"Image, Screen, Interface",SOC309/509,1SSHClassat2xx
+Advanced Readings in,SSH721,None
+Graduate Systems (GS),CSE638,None

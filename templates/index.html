@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Recommendation</title>
+  <!-- Bootstrap CSS (v5) -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+  <style>
+    /* Additional custom styling (optional) */
+    body {
+      background-color: #f9f9f9;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .container {
+      margin-top: 2rem;
+    }
+    #recommend-btn {
+      margin-top: 1rem;
+    }
+    #results-section {
+      margin-top: 2rem;
+      display: none; /* Hide until we have results */
+    }
+    .loading-spinner {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Course Recommender</a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1 class="mt-5">Get Your Course Recommendations</h1>
+    <p class="lead">
+      Paste or type your resume text below, then click "Recommend Courses" 
+      to see suggestions tailored to your academic performance and interests.
+    </p>
+
+    <!-- Textarea for Resume Text -->
+    <div class="mb-3">
+      <label for="resume-text" class="form-label">Resume Text</label>
+      <textarea class="form-control" id="resume-text" rows="6"
+                placeholder="Paste your resume text here..."></textarea>
+    </div>
+
+    <!-- Recommendation Button -->
+    <button id="recommend-btn" class="btn btn-primary">
+      Recommend Courses
+    </button>
+    
+    <!-- Loading Spinner (optional) -->
+    <div class="loading-spinner text-center mt-3">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-2">Processing your resume...</p>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-section" class="mt-5">
+      <h2>Recommended Courses</h2>
+      <div class="table-responsive mt-4">
+        <table class="table table-bordered table-striped align-middle">
+          <thead>
+            <tr>
+              <th>Course Code</th>
+              <th>Course Name</th>
+              <th>Prerequisite</th>
+              <th>Similarity</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody id="recommendations-body">
+            <!-- Rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="mt-5">Average Weighted Scores</h2>
+      <div class="table-responsive mt-4">
+        <table class="table table-bordered table-striped align-middle">
+          <thead>
+            <tr>
+              <th>Course Type</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="scores-body">
+            <!-- Rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional if you need interactive components) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- JavaScript to handle the logic -->
+  <script>
+    const recommendBtn = document.getElementById('recommend-btn');
+    const resumeTextArea = document.getElementById('resume-text');
+    const resultsSection = document.getElementById('results-section');
+    const recommendationsBody = document.getElementById('recommendations-body');
+    const scoresBody = document.getElementById('scores-body');
+    const loadingSpinner = document.querySelector('.loading-spinner');
+
+    recommendBtn.addEventListener('click', async () => {
+      // Clear previous results
+      recommendationsBody.innerHTML = '';
+      scoresBody.innerHTML = '';
+      resultsSection.style.display = 'none';
+
+      // Show loader
+      loadingSpinner.style.display = 'block';
+      
+      // Prepare the request payload
+      const payload = {
+        resume_text: resumeTextArea.value.trim()
+      };
+      
+      try {
+        const response = await fetch('/recommend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        // Hide loader
+        loadingSpinner.style.display = 'none';
+
+        if (!response.ok) {
+          // If there's an error from the server
+          const errorData = await response.json();
+          alert(errorData.error || 'An error occurred while getting recommendations.');
+          return;
+        }
+
+        const data = await response.json();
+        
+        // Display results if we have them
+        resultsSection.style.display = 'block';
+
+        // Populate recommendations
+        if (data.recommendations && data.recommendations.length > 0) {
+          data.recommendations.forEach(course => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${course['Course Code']}</td>
+              <td>${course['Course Name']}</td>
+              <td>${course['Prerequisite']}</td>
+              <td>${course['Similarity'] ? course['Similarity'].toFixed(2) : ''}</td>
+              <td>${course['Priority']}</td>
+            `;
+            recommendationsBody.appendChild(row);
+          });
+        }
+
+        // Populate average weighted scores
+        if (data.average_weighted_scores) {
+          for (const [courseType, score] of Object.entries(data.average_weighted_scores)) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${courseType}</td>
+              <td>${score.toFixed(2)}</td>
+            `;
+            scoresBody.appendChild(row);
+          }
+        }
+      } catch (err) {
+        // Hide loader in case of fetch error
+        loadingSpinner.style.display = 'none';
+        console.error(err);
+        alert('An error occurred while fetching recommendations.');
+      }
+    });
+  </script>
+</body>
+</html>

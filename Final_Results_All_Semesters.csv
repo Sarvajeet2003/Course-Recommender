@@ -1,0 +1,37 @@
+Semester,Course Name,Course Code,Course Type,Credits,Grade,Grade Point
+Semester 1,Communication Skills,COM101,Mandatory (Core),4,B-,7
+Semester 1,Introduction to Programming,CSE101,Mandatory (Core),4,C-,5
+Semester 1,Introduction to HCI,DES102,Mandatory (Core),4,B,8
+Semester 1,Digital Circuits,ECE111,Mandatory (Core),4,B-,7
+Semester 1,Maths I,MTH100,Mandatory (Core),4,D,4
+Semester 2,Data Structures and Algorithms,CSE102,Mandatory (Core),4,C-,5
+Semester 2,Computer Organisation,CSE112,Mandatory (Core),4,B-,7
+Semester 2,Probability and Statistics,MTH201,Mandatory (Core),4,C-,5
+Semester 2,Introduction to Sociology and Anthropology,SOC101,Mandatory (Core),4,C,6
+Semester 2,Critical Thinking and Readings in Social Science,SSH101,Mandatory (Core),4,B-,7
+Semester 3,Discrete Mathematics,CSE121,Mandatory (Core),4,D,4
+Semester 3,Advanced Programming,CSE201,Mandatory (Core),4,B,8
+Semester 3,Operating Systems,CSE231,Mandatory (Core),4,C,6
+Semester 3,Maths III,MTH203,Mandatory (Core),4,D,4
+Semester 3,Research Methods in Social Sciences and Design,SSH201,Mandatory (Core),4,D,4
+Semester 4,Fundamentals of Database Systems,CSE202,Mandatory (Core),4,C,6
+Semester 4,Analysis and Design of Algorithms,CSE222,Mandatory (Core),4,B,8
+Semester 4,Econometrics I,ECO221,Mandatory (Core),4,C,6
+Semester 4,Convex Optimization,MTH377,Mandatory (Core),4,C,6
+Semester 4,Sociological Theory,SOC210,Department Elective,4,C,6
+Semester 5,Independent Project: A Recipe-A-Day Emailer Development,BIP398,Department Elective,4,A,10
+Semester 5,Technical Communication,COM301A,Mandatory (Core),2,B,8
+Semester 5,Computer Architecture,CSE511,Department Elective,4,B,8
+Semester 5,Environmental Sciences,ESC205A,Open Elective,2,B,8
+Semester 5,Cognition of Motor Movement,PSY308,Department Elective,4,C-,5
+Semester 5,Gender and Media,SOC308,Department Elective,4,C,6
+Semester 6,Independent Project: Computational Gastronomy,BIP399,Department Elective,4,A,10
+Semester 6,Information Retrieval,CSE508,Department Elective,4,B,8
+Semester 6,Parallel Runtimes for Modern Processors,CSE513,Department Elective,4,W,0
+Semester 6,Mobile Computing,CSE535,Department Elective,4,B,8
+Semester 6,Distance Course in ECE,ECE999,Open Elective,4,S,0
+Semester 7,BTech Project: Computational Gastronomy,BTP499,Open Elective,4,A,10
+Semester 7,Computing for Medicine,CSE585,Open Elective,4,B-,7
+Semester 7,Neuroscience of Decision Making,PSY307,Department Elective,4,B,8
+Semester 7,Intersectionality Studies,SOC315,Department Elective,4,B-,7
+Semester 7,"Governing AI: History, Theory, Policy",SSH341,Department Elective,4,C-,5
