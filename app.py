@@ -3,47 +3,13 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import spacy
 import logging
-from sentence_transformers import SentenceTransformer, util
 import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
-
-# Initialize models as None for lazy loading
-nlp = None
-sbert_model = None
-
-def get_spacy_model():
-    """Dynamically load the spaCy model."""
-    global nlp
-    if nlp is None:
-        try:
-            nlp = spacy.load("en_core_web_sm")
-        except OSError:
-            spacy.cli.download("en_core_web_sm")
-            nlp = spacy.load("en_core_web_sm")
-        logging.info("spaCy model loaded successfully.")
-    return nlp
-
-def get_sbert_model():
-    """Dynamically load the SBERT model."""
-    global sbert_model
-    if sbert_model is None:
-        try:
-            model_name = "all-MiniLM-L6-v2"
-            model_cache_path = "./models/"
-            if not os.path.exists(model_cache_path):
-                os.makedirs(model_cache_path)
-            sbert_model = SentenceTransformer(model_name, cache_folder=model_cache_path)
-            logging.info(f"SBERT model '{model_name}' loaded successfully from {model_cache_path}.")
-        except Exception as e:
-            logging.error(f"Error loading SBERT model: {e}")
-            raise
-    return sbert_model
 
 # Load data
 try:
@@ -73,23 +39,16 @@ def validate_dataframes():
 
 validate_dataframes()
 
-# Helper Functions
-def extract_resume_keywords(resume_text):
-    """Extracts domain-relevant keywords from a resume using spaCy."""
-    doc = get_spacy_model()(resume_text)
-    keywords = []
+# Preprocess data
+def preprocess_data():
+    """Prepares the courses dataframe for recommendations with enhanced handling."""
+    courses_df['Prerequisite'] = courses_df['Prerequisite'].fillna('None')
+    courses_df['Combined_Info'] = courses_df['Course Name'] + ' ' + courses_df['Prerequisite']
+    completed_courses = set(results_df['Course Code'].dropna())
+    courses_df['Completed'] = courses_df['Course Code'].apply(lambda x: x in completed_courses)
+    return courses_df
 
-    # Extract specific entities
-    for ent in doc.ents:
-        if ent.label_ in ['ORG', 'PRODUCT', 'SKILL', 'GPE', 'LANGUAGE', 'WORK_OF_ART', 'EVENT']:
-            keywords.append(ent.text)
-
-    # Include noun chunks (e.g., "data analysis", "machine learning")
-    keywords.extend([chunk.text for chunk in doc.noun_chunks if len(chunk.text.split()) > 1])
-
-    # Deduplicate and join keywords
-    return " ".join(set(keywords))
-
+# Analyze academic performance
 def analyze_academic_performance():
     """Analyzes academic performance to identify strong and weak areas."""
     grade_weights = {
@@ -107,54 +66,37 @@ def analyze_academic_performance():
 
     return avg_weighted_scores, strong_courses, weak_courses
 
-def preprocess_data():
-    """Prepares the courses dataframe for recommendations with enhanced handling."""
-    # Fill missing prerequisites with a placeholder
-    courses_df['Prerequisite'] = courses_df['Prerequisite'].fillna('None')
-
-    # Combine relevant course information for matching
-    courses_df['Combined_Info'] = courses_df['Course Name'] + ' ' + courses_df['Prerequisite']
-
-    # Mark courses as completed if they appear in the results data
-    completed_courses = set(results_df['Course Code'].dropna())
-    courses_df['Completed'] = courses_df['Course Code'].apply(lambda x: x in completed_courses)
-
-    return courses_df
-
-def recommend_courses_with_sbert(resume_text):
-    """Recommend courses using SBERT for semantic matching."""
-    resume_keywords = extract_resume_keywords(resume_text)
-    if not resume_keywords:
-        resume_keywords = resume_text
-
-    # Compute embeddings
-    model = get_sbert_model()
-    course_embeddings = model.encode(courses_df['Combined_Info'].tolist(), convert_to_tensor=True)
-    user_embedding = model.encode([resume_keywords], convert_to_tensor=True)
-
-    # Calculate similarities
-    similarities = util.pytorch_cos_sim(user_embedding, course_embeddings)[0].cpu().numpy()
-
+# TF-IDF-based recommendation system
+def recommend_courses_with_tfidf(resume_text):
+    """Recommend courses using TF-IDF for text vectorization."""
+    # Vectorize the text
+    tfidf_vectorizer = TfidfVectorizer(stop_words='english')
+    course_texts = courses_df['Combined_Info'].tolist()
+    tfidf_matrix = tfidf_vectorizer.fit_transform(course_texts + [resume_text])
+    
+    # Compute cosine similarity
+    user_vector = tfidf_matrix[-1]  # The last vector is the user's resume
+    similarity_scores = cosine_similarity(user_vector, tfidf_matrix[:-1]).flatten()
+    
     # Add similarity scores to the dataframe
-    courses_df['Similarity'] = similarities
-
-    # Identify strong and weak courses first (based on academic performance)
+    courses_df['Similarity'] = similarity_scores
+    
+    # Filter and prioritize courses
     recommendations = courses_df[~courses_df['Completed']]
-
     recommendations['Priority'] = recommendations['Course Code'].apply(
         lambda x: 3 if x in strong_courses else (1 if x in weak_courses else 2)
     )
 
     # Sort by priority and similarity
     recommendations = recommendations.sort_values(by=['Priority', 'Similarity'], ascending=[False, False]).head(5)
-
+    
     # Fallback to random suggestions if no strong matches
     if recommendations['Similarity'].max() < 0.1:
         recommendations = courses_df[~courses_df['Completed']].sample(5)
-
+    
     return recommendations[['Course Code', 'Course Name', 'Prerequisite', 'Similarity', 'Priority']].to_dict(orient='records')
 
-# Preprocess data
+# Preprocess data and analyze performance
 courses_df = preprocess_data()
 avg_weighted_scores, strong_courses, weak_courses = analyze_academic_performance()
 
@@ -172,7 +114,7 @@ def recommend_courses():
             return jsonify({"error": "Missing 'resume_text' in request"}), 400
 
         resume_text = data['resume_text']
-        response = recommend_courses_with_sbert(resume_text)
+        response = recommend_courses_with_tfidf(resume_text)
 
         return jsonify({
             "average_weighted_scores": avg_weighted_scores.to_dict(),
@@ -185,5 +127,5 @@ def recommend_courses():
 
 if __name__ == "__main__":
     # Bind to the port assigned by Render
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 9000))
     app.run(host="0.0.0.0", port=port)

@@ -1,8 +1,5 @@
-flask
-flask-cors
+Flask
 pandas
 numpy
 scikit-learn
-spacy
-sentence-transformers
-gunicorn
+gunicornpip install -r requirements.txt
