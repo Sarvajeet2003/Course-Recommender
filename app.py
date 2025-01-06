@@ -177,5 +177,7 @@ def recommend_courses():
         logging.error(f"Error in /recommend: {e}")
         return jsonify({"error": "An error occurred during processing."}), 500
 
-app.run()
-
+if __name__ == "__main__":
+    # Bind to the port assigned by Render
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
