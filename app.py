@@ -6,6 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import spacy
 import logging
 from sentence_transformers import SentenceTransformer, util
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -14,16 +15,24 @@ app = Flask(__name__)
 
 # Load spaCy model
 try:
-    nlp = spacy.load('en_core_web_sm')
-    logging.info("spaCy model loaded successfully.")
-except Exception as e:
-    logging.error(f"Error loading spaCy model: {e}")
-    raise
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    spacy.cli.download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 # Load SBERT model
+# Load or download the SBERT model dynamically
 try:
-    sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
-    logging.info("SBERT model loaded successfully.")
+    model_name = "all-MiniLM-L6-v2"
+    model_cache_path = "./models/"  # Local directory for caching models
+
+    # Check if the model is already cached
+    if not os.path.exists(model_cache_path):
+        os.makedirs(model_cache_path)
+
+    sbert_model = SentenceTransformer(model_name, cache_folder=model_cache_path)
+    logging.info(f"SBERT model '{model_name}' loaded successfully from {model_cache_path}.")
+
 except Exception as e:
     logging.error(f"Error loading SBERT model: {e}")
     raise
