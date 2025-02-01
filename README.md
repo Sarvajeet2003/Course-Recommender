@@ -92,7 +92,7 @@ Serves the **index.html** frontend where users can input text and receive recomm
 - **Visualization**: Graph-based insights on academic performance trends.
 
 ## License
-This project is open-source under the **MIT License**.
+This project is open-source.
 
 ## Author
 Developed by [Sarvajeet2003](https://github.com/Sarvajeet2003).
